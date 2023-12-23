@@ -13,6 +13,7 @@ read -p "Do you want to install Selenium with Firefox? (yes/no): " install_selen
 
 read -p "Do you want to install XFCE4 and VNC? (yes/no): " install_xfce_vnc
 
+read -p "Do you want to install Terminal Theme? (yes/no): " install_terminal_theme
 
 
 yes | pkg update -y
@@ -66,6 +67,7 @@ if [[ "$install_xfce_vnc" =~ ^[Yy][Ee][Ss]$ || "$install_xfce_vnc" =~ ^[Yy]$ ]];
     echo "Installing XFCE4 and VNC..."
     yes | pkg install tigervnc -y
     yes | pkg install xfce4 -y
+    yes | pkg install aterm -y
     vncserver
     vncserver -kill :1
     cd .vnc
